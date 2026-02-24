@@ -4,6 +4,12 @@
   align-items: center;
   text-align: center;
 }
+@mixin justify {
+  display: flex;
+  justify-content: justify;
+  align-items: center;
+  text-align: justify;
+}
 @mixin between {
   display: flex;
   justify-content: space-between;

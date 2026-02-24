@@ -1,0 +1,102 @@
+@use "../abstract/" as *;
+
+.aboutBanner {
+  padding: 4rem 0;
+  &__top {
+    @include between;
+
+    h1 {
+      line-height: 5rem;
+      margin-top: 2rem;
+      max-width: 48rem;
+    }
+    &--right {
+      max-width: 40rem;
+    }
+    &--left {
+      small {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-areas:
+      "a c"
+      "b c";
+    align-items: center;
+    gap: 2rem;
+    &--a {
+      grid-area: a;
+      @include imgFit(500px, 500px);
+    }
+    &--b {
+      grid-area: b;
+      h3 {
+        margin-bottom: 2rem;
+      }
+      p {
+        max-width: 40rem;
+      }
+    }
+    &--c {
+      grid-area: c;
+      @include imgFit(100%, 700px);
+      margin-top: 5rem;
+    }
+  }
+}
+
+.aboutValues {
+  padding: 5rem 0;
+  margin: 5rem 0;
+  &__wrapper {
+    padding: 12rem 0;
+  }
+  .title h2 {
+    color: $clr--light;
+    padding-top: 2rem;
+  }
+  .title p {
+    color: $clr--light;
+    margin-bottom: 2rem;
+  }
+
+  &__cards {
+    @include gridFixed(2, 1rem);
+    gap: 2rem;
+    max-width: 70rem;
+     
+    margin: 0 auto;
+  }
+  &__details {
+    @include gridFixed(2, 1rem);
+    @include justify();
+    justify-items: center;
+    padding: 2rem;
+    background-color: $clr--light;
+    max-width: 50rem;
+  }
+  img {
+    width: 30rem;
+  }
+
+  h4 {
+    margin: 1.5rem 0;
+  }
+}
+.aboutLocation{
+  padding: 4rem 0;
+   .title h2{
+    margin-bottom: 1rem;
+   }
+
+  &__map{
+    @include centerAll();
+    margin-bottom: 2rem 0;
+      iframe{
+        width: 70rem;
+      }
+  }
+}

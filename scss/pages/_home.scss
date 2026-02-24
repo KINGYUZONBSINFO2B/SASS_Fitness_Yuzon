@@ -16,57 +16,90 @@
       line-height: 4rem;
       margin: 2rem;
     }
-    p{
+    p {
       margin-bottom: 2rem;
     }
   }
 }
 
-.homeAbout{
+.homeAbout {
   padding: 4rem 0;
-  &__wrapper{
+  &__wrapper {
     @include gridFixed(2, 3rem);
     align-items: center;
   }
-  &--a{
+  &--a {
     grid-area: a;
   }
-  &--b{
+  &--b {
     grid-area: b;
   }
-  &--c{
+  &--c {
     grid-area: c;
   }
-  &__left{
-    ul{
+  &__left {
+    ul {
       display: grid;
-      grid-template-areas: 
-      "a c"
-      "b c"
-      ;
+      grid-template-areas:
+        "a c"
+        "b c";
       align-items: center;
       gap: 1rem;
     }
   }
-  &__right{
-    h2{
+  &__right {
+    h2 {
       margin-bottom: 2rem;
     }
-    p{
+    p {
       margin-bottom: 2rem;
     }
   }
 }
 
-.homeClass{
+.homeClass {
   padding: 4rem;
-  &__slider{
+  &__slider {
     display: flex;
     gap: 2rem;
-     
   }
-  .listButton{
+  .listButton {
     margin-top: 2rem;
     @include centerAll();
   }
 }
+
+.homeTrainer {
+  padding: 4rem;
+  &__title {
+    @include between;
+    margin-bottom: 2rem;
+    .h2 {
+      max-width: 40rem;
+    }
+  }
+
+  &__cards {
+    @include gridFixed(3, 1rem);
+    gap: 2rem;
+  }
+}
+
+.cardIcon {
+  @include centerAll;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  img {
+    width: 7rem;
+  }
+  &__details {
+    h4 {
+      margin: 1.5rem 0;
+    }
+  }
+}
+
+
+ 
