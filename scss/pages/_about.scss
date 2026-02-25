@@ -47,10 +47,32 @@
     }
   }
 }
+@include mediaQuery(520px) {
+  .aboutBanner {
+    padding-top: 11rem;
+    &__top {
+      display: block;
+      margin-bottom: 2rem;
+    }
+    &__bottom {
+      grid-template-areas:
+        "a a"
+        "c c"
+        "b b";
+      &--a {
+        @include imgFit(500px, 400px);
+      }
+      &--c {
+        @include imgFit(700px, 600px);
+      }
+    }
+  }
+}
 
 .aboutValues {
   padding: 5rem 0;
   margin: 5rem 0;
+
   &__wrapper {
     padding: 12rem 0;
   }
@@ -67,7 +89,7 @@
     @include gridFixed(2, 1rem);
     gap: 2rem;
     max-width: 70rem;
-     
+
     margin: 0 auto;
   }
   &__details {
@@ -86,17 +108,27 @@
     margin: 1.5rem 0;
   }
 }
-.aboutLocation{
+@include mediaQuery(520px) {
+  .aboutValues {
+    &__wrapper {
+      padding-top: unset;
+    }
+    &__cards {
+      @include gridFixed(1, 1rem);
+    }
+  }
+}
+.aboutLocation {
   padding: 4rem 0;
-   .title h2{
+  .title h2 {
     margin-bottom: 1rem;
-   }
+  }
 
-  &__map{
+  &__map {
     @include centerAll();
     margin-bottom: 2rem 0;
-      iframe{
-        width: 70rem;
-      }
+    iframe {
+      width: 70rem;
+    }
   }
 }

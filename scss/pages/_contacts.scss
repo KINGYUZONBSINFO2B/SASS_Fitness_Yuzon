@@ -4,6 +4,10 @@
 .contactBanner {
   padding: 7rem 0;
   position: relative;
+  @include mediaQuery(520px){
+    padding: unset;
+    padding-top: 13rem;
+  }
   &__title {
     max-width: 50rem;
     margin-bottom: 2rem;
@@ -11,6 +15,10 @@
 
   &__wrapper {
     @include gridCustom(1.5fr 1fr, 5rem);
+
+    @include mediaQuery(520px) {
+      @include gridCustom(1fr, 3rem);
+    }
   }
   &__left {
     form {
@@ -58,15 +66,28 @@
       right: 1rem;
       bottom: 1rem;
       z-index: -9;
+      @include mediaQuery(520px) {
+        position: unset;
+        content: " ";
+        background-color: unset;
+        width: 1rem;
+        height: 1rem;
+        padding: 2rem;
+      }
     }
   }
 }
+
 .contactFaq {
   padding: 4rem 0;
   &__wrapper {
     display: flex;
     font-display: row;
     gap: 5rem;
+    @include mediaQuery(520px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__left {
     h2 {
@@ -77,19 +98,33 @@
   &__item {
     border-bottom: 1px solid $clr--gray;
     padding: 1.5rem 0;
-    &--question{
-        @include between();
-        cursor: pointer;
-        i{
-            transition: 0.5s ease;
-        }
-    }
-    
-    &--answer{
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
+    &--question {
+      @include between();
+      cursor: pointer;
+      i {
         transition: 0.5s ease;
+      }
+    }
+    &.active {
+      i {
+        transform: rotate(180deg);
+      }
+      .contactFaq__item--answer {
+        max-height: 1000px;
+      }
+    }
+
+    &--answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.5s ease;
+      margin-top: 2rem;
+
+      .contactFaq__item.active {
+        opacity: 1;
+        padding-top: 1rem;
+        max-height: 1000px;
+      }
     }
   }
 }

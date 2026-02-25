@@ -14,18 +14,18 @@ h3 {
   font-size: clamp(2rem, 5vw, 2.25rem);
 }
 h4 {
-  font-size: clam(1.25rem, 5vw, 1.5rem);
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
 }
 h5 {
   font-size: 1.25rem;
 }
 h6 {
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 p {
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
-small{
+small {
   font-size: 1.25rem;
 }
- 
+
